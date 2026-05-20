@@ -3,8 +3,8 @@
 # -- Project information
 
 project = 'Xerlock Rouses'
-copyright = '2021, Graziella'
-author = 'Graziella'
+copyright = '2026, Vortex-Line'
+author = 'Vortex-Line'
 
 release = '0.1'
 version = '0.1.0'
