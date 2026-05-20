@@ -1,1 +1,2 @@
-print("Hello World!")
+text = "Test"
+print(text)
