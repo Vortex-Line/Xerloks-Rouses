@@ -1,34 +1,29 @@
-Usage
-=====
+Guia de Início Rápido
+=====================
 
-.. _installation:
+Este guia orienta o desenvolvedor na configuração inicial da plataforma **vortex-line**.
 
-Installation
-------------
+Instalação do SDK (Python)
+--------------------------
 
-To use Lumache, first install it using pip:
+Se você preferir utilizar o nosso SDK oficial em vez de chamadas HTTP puras, instale o pacote via pip:
 
-.. code-block:: console
+.. code-block:: bash
 
-   (.venv) $ pip install lumache
+   pip install vortex-line-sdk
 
-Creating recipes
-----------------
+Configuração Inicial
+--------------------
 
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
+Importe o cliente e configure suas credenciais de ambiente:
 
-.. autofunction:: lumache.get_random_ingredients
+.. code-block:: python
 
-The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
-will raise an exception.
+   from vortex_line import VortexClient
 
-.. autoexception:: lumache.InvalidKindError
+   client = VortexClient(api_key="SEU_TOKEN_AQUI")
 
-For example:
-
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
+   # Exemplo rápido de checagem
+   result = client.verify(url="https://site-suspeito.com")
+   print(f"Veredito: {result.verdict}")
 
