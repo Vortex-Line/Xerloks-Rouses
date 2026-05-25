@@ -1,18 +1,14 @@
-.. vortex-line documentation master file
-
 ===========================
 Documentação do vortex-line
 ===========================
 
 O **vortex-line** é uma ferramenta de código aberto desenvolvida para verificar a veracidade de conteúdos na internet de forma local e independente, **sem o uso de APIs externas** de terceiros.
 
-🚀 Começo Rápido
-================
+Começo Rápido
+=============
 
 Instalação
 ----------
-
-Instale o pacote diretamente do repositório ou gerenciador local:
 
 .. code-block:: bash
 
@@ -21,35 +17,49 @@ Instale o pacote diretamente do repositório ou gerenciador local:
 Uso Básico
 ----------
 
-Analise um texto ou link diretamente pelo seu código:
-
 .. code-block:: python
 
    from vortex_line import Verificador
 
-   # Inicializa o motor de análise local
    verificador = Verificador()
-
-   # Analisa o conteúdo de forma offline
    resultado = verificador.analisar("Texto suspeito para checagem")
    print(resultado.score_confiabilidade)
 
+Como Funciona (Sem APIs)
+========================
 
-🛠️ Como Funciona (Sem APIs)
-===========================
-
-O grande diferencial do **vortex-line** é a autonomia. O sistema não consome serviços externos (como Google, OpenAI ou ferramentas pagas). 
-
-Ele opera através de quatro pilares locais:
+O grande diferencial do **vortex-line** é a autonomia. O sistema não consome serviços externos.
 
 * **Análise Heurística**: Identifica padrões textuais e sensacionalismo comuns em notícias falsas.
-* **Processamento de Linguagem Natural (PLN) Local**: Processa a sintaxe, léxico e o tom do texto usando modelos matemáticos embarcados.
+* **Processamento de Linguagem Natural (PLN) Local**: Processa a sintaxe e o tom do texto usando modelos matemáticos embarcados.
 * **Banco de Dados Estático**: Compara assinaturas e estruturas de boatos conhecidos previamente catalogados.
-* **Análise de Reputação Estrutural**: Verifica a integridade de URLs e códigos-fonte sem realizar requisições rastreáveis.
+* **Análise de Reputação Estrutural**: Verifica a integridade de URLs e códigos-fonte.
 
+Referência da API (usage.api)
+=============================
 
-📂 Estrutura do Projeto
-=======================
+Método: analisar_texto
+----------------------
+
+.. code-block:: python
+
+   analisar_texto(conteudo: str) -> dict
+
+* **Parâmetros**: ``conteudo`` (str) - O texto ou corpo da notícia a ser validado.
+* **Retorno**: ``dict`` - Dicionário contendo ``score``, ``flags`` detectadas e ``status``.
+
+Método: validar_estrutura
+-------------------------
+
+.. code-block:: python
+
+   validar_estrutura(url: str) -> bool
+
+* **Parâmetros**: ``url`` (str) - O endereço web completo.
+* **Retorno**: ``bool`` - ``True`` se a estrutura for legítima, ``False`` se apresentar padrões maliciosos.
+
+Estrutura do Projeto
+====================
 
 .. code-block:: text
 
@@ -60,3 +70,4 @@ Ele opera através de quatro pilares locais:
    │   └── dados/          # Base de dados estática e regras
    ├── tests/              # Testes unitários
    └── README.md           # Visão geral do repositório
+
