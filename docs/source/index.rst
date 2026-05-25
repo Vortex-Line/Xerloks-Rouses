@@ -1,15 +1,42 @@
-Documentação Oficial | vortex-line
-==================================
+.. vortex-line documentation master file
 
-.. image:: https://shields.io
-   :target: https://readthedocs.org
+Documentação do vortex-line
+===========================
 
-Bem-vindo à documentação da **vortex-line**, uma plataforma dedicada à identificação, análise e mitigação de conteúdos falsos e desinformação na internet.
-
-Nossa ferramenta combina inteligência artificial avançada e uma rede de checagem humana para validar a integridade de notícias e mídias digitais em tempo real diretamente pelo nosso site.
+O **vortex-line** é uma ferramenta de código aberto desenvolvida para verificar a veracidade de conteúdos na internet de forma local e independente, **sem o uso de APIs externas** de terceiros.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Guia do Usuário
+   :caption: Sumário:
 
-   usage
+   instalacao
+   funcionamento
+   arquitetura
+
+🚀 Começo Rápido
+---------------
+
+Instalação
+~~~~~~~~~~
+
+Instale o pacote diretamente do repositório ou gerenciador local:
+
+.. code-block:: bash
+
+   pip install vortex-line
+
+Uso Básico
+~~~~~~~~~~
+
+Analise um texto ou link diretamente pelo seu código:
+
+.. code-block:: python
+
+   from vortex_line import Verificador
+
+   # Inicializa o motor de análise local
+   verificador = Verificador()
+
+   # Analisa o conteúdo de forma offline
+   resultado = verificador.analisar("Texto suspeito para checagem")
+   print(resultado.score_confiabilidade)
