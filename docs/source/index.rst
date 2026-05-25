@@ -1,16 +1,13 @@
-# Bem-vindo à Documentação da vortex-line
+Bem-vindo à vortex-line
+=======================
 
-A **vortex-line** é uma plataforma especializada na identificação, análise e mitigação de conteúdos falsos e desinformação na internet. 
+A **vortex-line** é uma plataforma especializada na identificação e mitigação de conteúdos falsos na internet.
 
-Nossa missão é fornecer ferramentas automatizadas e análises humanas para garantir a integridade da informação digital.
+.. toctree::
+   :maxdepth: 2
+   :caption: Conteúdo:
 
-## Principais Recursos
-* **Análise em Tempo Real:** Varredura de links e imagens suspeitas.
-* **API de Verificação:** Integração com redes sociais e portais de notícias.
-* **Relatórios de Impacto:** Dados estatísticos sobre a propagação de boatos.
+   usage
+   api
 
-## Links Rápidos
-* [Guia de Integração](api.md)
-* [Metodologia de Checagem](metodologia.md)
-* [Termos de Uso e Compliance](compliance.md)
 
