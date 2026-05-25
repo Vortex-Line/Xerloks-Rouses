@@ -1,29 +1,28 @@
-Guia de Início Rápido
-=====================
+Como Usar a Plataforma
+======================
 
-Este guia orienta o desenvolvedor na configuração inicial da plataforma **vortex-line**.
+A **vortex-line** oferece uma interface simples e direta para que qualquer pessoa possa verificar a veracidade de informações circulando na internet.
 
-Instalação do SDK (Python)
+Como Verificar um Conteúdo
 --------------------------
 
-Se você preferir utilizar o nosso SDK oficial em vez de chamadas HTTP puras, instale o pacote via pip:
+Para analisar um link ou texto suspeito, siga os passos abaixo:
 
-.. code-block:: bash
+1. Acesse a página inicial do nosso site.
+2. Cole a **URL do artigo** ou o **texto da mensagem** recebida no campo de busca principal.
+3. Clique no botão **"Verificar Conteúdo"**.
+4. Aguarde alguns segundos enquanto nossa inteligência artificial cruza os dados com fontes oficiais.
 
-   pip install vortex-line-sdk
+Entendendo os Resultados
+------------------------
 
-Configuração Inicial
---------------------
+Após a análise, o sistema exibirá uma das seguintes classificações:
 
-Importe o cliente e configure suas credenciais de ambiente:
+* **Verdadeiro (Verde):** O conteúdo foi validado por fontes confiáveis e agências de checagem.
+* **Inconclusivo (Amarelo):** Não há dados suficientes para confirmar ou desmentir a informação. Recomenda-se cautela ao compartilhar.
+* **Falso (Vermelho):** A informação foi identificada como boato ou desinformação fabricada.
 
-.. code-block:: python
+Como Enviar uma Denúncia
+------------------------
 
-   from vortex_line import VortexClient
-
-   client = VortexClient(api_key="SEU_TOKEN_AQUI")
-
-   # Exemplo rápido de checagem
-   result = client.verify(url="https://site-suspeito.com")
-   print(f"Veredito: {result.verdict}")
-
+Se você encontrou um boato que ainda não foi analisado pelo nosso sistema, você pode enviá-lo para a nossa equipe humana através do botão **"Enviar para Análise"** no menu superior do site.
