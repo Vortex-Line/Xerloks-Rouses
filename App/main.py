@@ -11,7 +11,7 @@ with OpenRouter(
     response = client.chat.send(
         model="openai/gpt-oss-120b:free",
         messages=[
-            {"role": "user", "content": user_input + " responde de forma curta"}
+            {"role": "user", "content": "Pegue está noticia e analise ela: " + user_input + " responda com Verdadeira ou Falsa."}
         ]
     )
     
