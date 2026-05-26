@@ -1,7 +1,9 @@
 from openrouter import OpenRouter
 import os
+from dotenv import load_dotenv, dotenv_values 
 
-api_key = "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"
+load_dotenv()
+api_key = os.getenv('OPEN_ROUTER_API_KEY')
 
 def ia_chat():
     while True:
